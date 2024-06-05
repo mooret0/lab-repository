@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+%--------------------------------------
+\usepackage[english, russian]{babel}
+\begin{document}
+\begin{math}
+\left.
+\begin{array}{cc}
+     &f(x,t) = \sum_{n = 1}^{\infty }f_{n}(t)sin\frac{\pi n}{l}, \ f_{n}(t)=\tfrac{2}{l}\int_{l}^{0}f(\xi, \ t)sin\frac{\pi n}{l}\xi d \xi; \\
+     &\phi(x) = \sum_{n = 1 }^{\infty} \phi_{n}sin\tfrac{\pi n}{l}x, \ \phi_{n}= \frac{2}{l}\int_{0}^{l}\phi(\xi)sin\frac{\pi n}{l}\xi d\xi; \\
+     &\psi(x) = \sum_{n=1}^{\infty } \psi_{n}sin\frac{\pi n}{l}x, \ \psi_{n}= \frac{2}{l}\int_{0}^{l}\psi(\xi)sin\frac{\pi n}{l}\xi d\xi. 
+\end{array}
+\right\} \ (49) \\
+\end{math}
+
+Подставляя предполагаемую форму решения (48) в исходное уравнение (45) \\ 
+\[\sum_{n=1}^{\infty } sin \frac{\pi n}{l}x\left\{ -a^{2}(\frac{\pi n}{l})^{2}u_{n}(t) - ü_{n}(t)+f_{n}(t) \right\} = 0\] \\
+видим, что оно будет удовлетворено, если все коэффициенты разложения равны нулю, т.е. \\
+\[ü_{n}(t) + (\frac{\pi n}{l})^{2} a^{2}u_{n}(t)=f_{n}(t) \ \ \ \ \ \ \ \ \ \ \ \ (50)\] 
+Для определения \(u_{n}(t)\) мы получили обыкновенное дифференциальное уравнение с постоянными коэффициентами. Начальные условия дают: \\
+
+\[
+\textit{u(x,0)} = \phi(x)=\sum_{n=1}^{\infty } u_{n}(0)sin\frac{\pi n}{l}x = \sum_{n=1}^{\infty }\phi_{n}sin\frac{\pi n}{l}x,\] 
+\[u_{t}(x,0) = \psi(x) = \sum_{n=1}^{\infty } u_{n}(0)sin\frac{\pi n}{l}x=\sum_{n=1}^{\infty }\psi_{n}sin\frac{\pi n}{l}x,\] \\
+откуда следует: \\
+\[
+\left.
+\begin{array}{cc}
+     &u_{n}(0) = \phi_{n}, \\
+     &u_{n}(0) = \psi_{n},
+\end{array}
+\right\} \ (51) 
+\]
+Эти дополнительные условия полностью определяют решение уравнения (50). Функцию \(u_{n}(t)\) можно представить в виде
+\[u_{n}(t)=u_{n}^{(I)} + u_{n}^{(II)} (t)\]
+где
+\[u_{n}^{(I)}(t)=\frac{l}{\pi na}\int_{0}^{t}sin\frac{\pi n}{l}a(t-\tau) \cdot f_{n}(\tau)d\tau\]
+есть решение неоднородного уравнения с нулевыми начальными условиями и 
+\[u_{n}^{(II)}(t)=\phi_{n}cos \frac{\pi n}{l}at+\frac{l}{\pi n a}\psi_{n}sin\frac{\pi n}{l}at\]
+--- решение однородного уравнения с заданными начальными условиями. Таким образом, искомое решение запишется в виде
+
+\begin{multline*}
+u(x,t) = \sum_{n=1}^{\infty }\frac{l}{\pi n a}\int_{0}^{t}sin\frac{\pi n}{l}a(t-\tau)sin\frac{\pi n}{l}x\cdot f_{n}(\tau)+\\
++\sum_{n=1}^{\infty }(\phi_{n}cos\frac{\pi n}{l}at+\frac{l}{\pi na}\psi_{n})sin\frac{\pi n}{l}x \ (54)
+\end{multline*}
+Вторая сумма представляет решение задачи о свободных колебаниях струны при заданных начальных условиях и была нами исследована достаточно подробно. Обратимся к изучению первой суммы, представляющий вынужденные колебания струны под дкйствием внешней силы при нулевых начальных условиях. Пользуясь выражением (49) для \(f_{n}(t)\), находим:
+\begin{multline*}
+u^{(I)}(x,t)=\\
+=\int_{0}^{t}\int_{0}^{l}\left\{ \frac{2}{l}\sum_{n=1}^{\infty } \frac{l}{\pi na}sin\frac{\pi n}{l}a(t- \tau)sin\frac{\pi n}{l}xsin\frac{\pi n}{l}\xi \right\}f(\xi,\tau)d\xi d\tau=\\
+=\int_{0}^{t}\int_{0}^{l}G(x, \xi,t-\tau)f(\xi,\tau)d\xi d\tau,
+\end{multline*}
+где,
+\[G(x, \xi,t-\tau)=\frac{2}{\pi a}\sum_{n=1}^{\infty }\frac{1}{n}sin\frac{\pi n}{l}a(t-\tau)sin\frac{\pi n}{l}xsin\frac{\pi n}{l}\xi\]
+Выясним физический смысл полученного решения. Пусть функция \(f(\xi , \tau)\) отлична от нуля в достаточно малой окрестности точки \(M_{0}(\xi_{0},\tau_{0})\):
+\[\xi_{0}\le \xi\le \xi_{0}+\Delta\xi, \ \tau_{0}\le \tau\le \tau_{0}+\Delta\tau.\]
+Функция \(\rho f(\xi,\tau)\) представляет плотность действующей силы: сила, приложенная к участку \((\xi_{0},\xi_{0}+\Delta\xi )\), равна 
+\[F(\tau)=\rho\int_{\xi_{0}}^{\xi_{0}+\Delta\xi}f(\xi,\tau)d\xi\]
+\end{document}
